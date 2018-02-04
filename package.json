@@ -5,6 +5,7 @@
   "author": "allentingley <allen.tingley@gmail.com>",
   "description": "Regulatory Reportings Bestest Friend",
   "dependencies": {
+    "@slack/client": "^3.16.0",
     "coffee-script": "^1.12.6",
     "hubot": "^2.19.0",
     "hubot-azure-brain": "^1.0.0",
