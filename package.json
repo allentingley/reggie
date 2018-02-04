@@ -7,6 +7,7 @@
   "dependencies": {
     "coffee-script": "^1.12.6",
     "hubot": "^2.19.0",
+    "hubot-azure-brain": "^1.0.0",
     "hubot-azure-scripts": "^0.1.7",
     "hubot-diagnostics": "0.0.2",
     "hubot-google-images": "^0.2.7",
