@@ -2,7 +2,7 @@
 module.exports = (robot) ->
 
   robot.respond /art/i, (msg) ->
-    imageMe msg, msg, (url) ->
+    imageMe msg, msg.match[1], (url) ->
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
       artist = artist.toUpperCase()
@@ -10,7 +10,7 @@ module.exports = (robot) ->
       art_title = art_title.split"."[0]
       art_title = art_title.replace /-/," "
       art_title = art_title.toUpperCase()
-      msg.send "UPDATE Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
+      msg.send "Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
