@@ -1,33 +1,8 @@
-# Description:
-#   Example scripts for you to examine and try out.
-#
-# Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-
-  # Description:
-#   A way to interact with the Google Images API.
-#
-# Configuration
-#   HUBOT_GOOGLE_CSE_KEY - Your Google developer API key
-#   HUBOT_GOOGLE_CSE_ID - The ID of your Custom Search Engine
-#   HUBOT_MUSTACHIFY_URL - Optional. Allow you to use your own mustachify instance.
-#   HUBOT_GOOGLE_IMAGES_HEAR - Optional. If set, bot will respond to any line that begins with "image me" or "animate me" without needing to address the bot directly
-#   HUBOT_GOOGLE_SAFE_SEARCH - Optional. Search safety level.
-#   HUBOT_GOOGLE_IMAGES_FALLBACK - The URL to use when API fails. `{q}` will be replaced with the query string.
-#
-# Commands:
-#   hubot image me <query> - The Original. Queries Google Images for <query> and returns a random top result.
-#   hubot animate me <query> - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
-#   hubot mustache me <url|query> - Adds a mustache to the specified URL or query result.
 
 module.exports = (robot) ->
 
   robot.respond /art (.+)/i, (msg) ->
-    imageMe msg, msg.match[3], (url) ->
+    imageMe msg, msg.match[2], (url) ->
       msg.send url
 
 imageMe = (msg, query, animated, faces, cb) ->
