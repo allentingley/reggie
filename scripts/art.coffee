@@ -7,7 +7,7 @@ module.exports = (robot) ->
       artist = artist.replace /-/," "
       artist = artist.toUpperCase()
       art_title = url.split"/"[5]
-      art_title = art_title.replace /-/," "
+      art_title = art_title.replace /-/g," "
       art_title = art_title.split"."[0]
       art_title = art_title.toUpperCase()
 
