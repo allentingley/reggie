@@ -4,9 +4,13 @@ module.exports = (robot) ->
   robot.respond /art/i, (msg) ->
     imageMe msg, msg.match[0], (url) ->
       artist = url.split"/"[4]
+      artist = artist.replace /-/," "
+      artist = artist.toUpperCase()
       art_title = url.split"/"[5]
       art_title = art_title.split"."[0]
-      msg.send "Today's visual art of the day is "+art_title+" by "+artist+": \n" + url 
+      art_title = art_title.replace /-/," "
+      art_title = art_title.toUpperCase()
+      msg.send "Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
