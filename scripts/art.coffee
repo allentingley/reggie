@@ -1,7 +1,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /art/i (.+)/i, (msg) ->
+  robot.respond /(art)? (.+)/i, (msg) ->
     imageMe msg, msg.match[2], (url) ->
       console.log(msg.match[0])
       console.log(msg.match[1])

@@ -7,6 +7,7 @@
   "hubot-maps",
   "hubot-rules",
   "hubot-azure-brain",
+  "hubot-redis-brain",
   "hubot-zendesk-enhanced",
   "hubot-aww2",
   "hubot-ascii-art",
