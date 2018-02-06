@@ -2,7 +2,7 @@
 module.exports = (robot) ->
 
   robot.respond /art/i, (msg) ->
-    imageMe msg, msg[1], (url) ->
+    imageMe msg, msg[3], (url) ->
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
       artist = artist.toUpperCase()
@@ -56,7 +56,7 @@ imageMe = (msg, query, animated, faces, cb) ->
           image = msg.random response.items
           cb ensureResult(image.link, animated)
         else
-          msg.send "Oops. I had trouble searching '#{query}'. Try later."
+          msg.send "CHANGE Oops. I had trouble searching '#{query}'. Try later."
           ((error) ->
             msg.robot.logger.error error.message
             msg.robot.logger
