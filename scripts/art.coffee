@@ -2,18 +2,13 @@
 module.exports = (robot) ->
 
   robot.respond /(art)? (.+)/i, (msg) ->
-    imageMe msg, msg.match[2], (url) ->
-      console.log(msg.match[0])
-      console.log(msg.match[1])
-      console.log(msg.match[2])
-      console.log(msg.match[3])
-      
+    imageMe msg, msg.match[2], (url) ->    
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
       artist = artist.toUpperCase()
       art_title = url.split"/"[5]
-      art_title = art_title.split"."[0]
       art_title = art_title.replace /-/," "
+      art_title = art_title.split"."[0]
       art_title = art_title.toUpperCase()
 
       msg.send "Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
@@ -62,7 +57,7 @@ imageMe = (msg, query, animated, faces, cb) ->
           image = msg.random response.items
           cb ensureResult(image.link, animated)
         else
-          msg.send "C Oops. I had trouble searching '#{query}'. Try later."
+          msg.send "Oops. I had trouble searching '#{query}'. Try later. + "
           ((error) ->
             msg.robot.logger.error error.message
             msg.robot.logger
