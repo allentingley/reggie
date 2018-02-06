@@ -2,7 +2,7 @@
 module.exports = (robot) ->
 
   robot.respond /art/i, (msg) ->
-    imageMe msg, msg[0], (url) ->
+    imageMe msg, msg[1], (url) ->
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
       artist = artist.toUpperCase()
