@@ -1,9 +1,9 @@
 
 module.exports = (robot) ->
 
-  robot.respond /(art)( me)? (.+)/i, (msg) ->
-    imageMe msg, msg.match[2], (url) ->
-      msg.send url
+  robot.respond /art/i, (msg) ->
+    imageMe msg, msg.match[0], (url) ->
+      msg.send "Today's visual art of the day: \`\`\`" + url + "\`\`\`"
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
