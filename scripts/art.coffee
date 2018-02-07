@@ -1,7 +1,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /(art)? (.+)/i, (msg) ->
+  robot.respond /(art )(.+)/i, (msg) ->
     imageMe msg, msg.match[2], (url) ->    
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
@@ -68,7 +68,6 @@ imageMe = (msg, query, animated, faces, cb) ->
       "Please [setup up Custom Search Engine API](https://github.com/hubot-scripts/hubot-google-images#cse-setup-details)."
     deprecatedImage(msg, query, animated, faces, cb)
 
-deprecatedImage = (msg, query, animated, faces, cb) ->
   # Show a fallback image
   imgUrl = process.env.HUBOT_GOOGLE_IMAGES_FALLBACK ||
     'http://i.imgur.com/CzFTOkI.png'
