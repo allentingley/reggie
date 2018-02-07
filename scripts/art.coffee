@@ -11,7 +11,19 @@ module.exports = (robot) ->
       art_title = art_title.split"."[0]
       art_title = art_title.toUpperCase()
 
-      msg.send "Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
+      msg.send "I really love *"+art_title+"* by *"+artist+"*: \n" + url 
+  
+  robot.respond /(aod )(.+)/i, (msg) ->
+    imageMe msg, msg.match[2], (url) ->    
+      artist = url.split"/"[4]
+      artist = artist.replace /-/," "
+      artist = artist.toUpperCase()
+      art_title = url.split"/"[5]
+      art_title = art_title.replace /-/g," "
+      art_title = art_title.split"."[0]
+      art_title = art_title.toUpperCase()
+
+      msg.send "Today's artwork of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
