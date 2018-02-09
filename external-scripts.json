@@ -1,6 +1,5 @@
 [
   "hubot-diagnostics",
-  "hubot-help",
   "hubot-google-images",
   "hubot-google-translate",
   "hubot-pugme",
@@ -8,8 +7,13 @@
   "hubot-rules",
   "hubot-azure-brain",
   "hubot-zendesk-enhanced",
-  "hubot-aww2",
   "hubot-ascii-art",
+  "hubot-friendly",
+  "hubot-warm-welcome",
+  "hubot-darksky",
+  "hubot-memes",
+  "hubot-schedule",
+  "hubot-better-help",
   "hubot-thank-you",
   "hubot-shipit"
 ]

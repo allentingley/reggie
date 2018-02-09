@@ -1,7 +1,7 @@
 
 module.exports = (robot) ->
 
-  robot.respond /(art)? (.+)/i, (msg) ->
+  robot.respond /(art )(.+)/i, (msg) ->
     imageMe msg, msg.match[2], (url) ->    
       artist = url.split"/"[4]
       artist = artist.replace /-/," "
@@ -11,7 +11,19 @@ module.exports = (robot) ->
       art_title = art_title.split"."[0]
       art_title = art_title.toUpperCase()
 
-      msg.send "Today's visual art of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
+      msg.send "I really love *"+art_title+"* by *"+artist+"*: \n" + url 
+  
+  robot.respond /(aod )(.+)/i, (msg) ->
+    imageMe msg, msg.match[2], (url) ->    
+      artist = url.split"/"[4]
+      artist = artist.replace /-/," "
+      artist = artist.toUpperCase()
+      art_title = url.split"/"[5]
+      art_title = art_title.replace /-/g," "
+      art_title = art_title.split"."[0]
+      art_title = art_title.toUpperCase()
+
+      msg.send "Today's artwork of the day is *"+art_title+"* by *"+artist+"*: \n" + url 
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
@@ -68,7 +80,6 @@ imageMe = (msg, query, animated, faces, cb) ->
       "Please [setup up Custom Search Engine API](https://github.com/hubot-scripts/hubot-google-images#cse-setup-details)."
     deprecatedImage(msg, query, animated, faces, cb)
 
-deprecatedImage = (msg, query, animated, faces, cb) ->
   # Show a fallback image
   imgUrl = process.env.HUBOT_GOOGLE_IMAGES_FALLBACK ||
     'http://i.imgur.com/CzFTOkI.png'
