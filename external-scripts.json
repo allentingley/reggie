@@ -8,13 +8,13 @@
   "hubot-rules",
   "hubot-azure-brain",
   "hubot-zendesk-enhanced",
-  "hubot-aww2",
   "hubot-ascii-art",
   "hubot-friendly",
   "hubot-warm-welcome",
   "hubot-darksky",
   "hubot-memes",
   "hubot-schedule",
+  "hubot-anon",
   "hubot-thank-you",
   "hubot-shipit"
 ]

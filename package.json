@@ -9,6 +9,7 @@
     "azure-storage": "^2.7.0",
     "coffee-script": "^1.12.6",
     "hubot": "^3.0.1",
+    "hubot-anon": "^1.0.0",
     "hubot-ascii-art": "^1.1.3",
     "hubot-azure-brain": "^1.0.0",
     "hubot-azure-scripts": "^0.1.7",
