@@ -1,4 +1,14 @@
-
+# Description:
+#   Send a random image from /r/aww to chat to cheer everyone up.
+#
+# Configuration:
+#   None
+#
+# Commands:
+#   hubot aww - Returns a random image from /r/aww
+#
+# Author:
+#   Allen Tingley
 _ = require 'underscore'
 
 module.exports = (robot) ->
