@@ -99,7 +99,7 @@ module.exports = (robot) ->
 
   robot.respond /debugtime/i, (msg) ->
     duh = Date.now()
-    return msg.send duh 
+    msg.send duh 
 
 schedule = (robot, msg, room, pattern, message) ->
   if JOB_MAX_COUNT <= Object.keys(JOBS).length
