@@ -13,6 +13,7 @@
     "hubot-azure-brain": "^1.0.0",
     "hubot-azure-scripts": "^0.1.7",
     "hubot-better-help": "^0.1.1",
+    "hubot-cron": "^0.2.9",
     "hubot-darksky": "^1.1.0",
     "hubot-diagnostics": "0.0.2",
     "hubot-friendly": "0.0.2",
