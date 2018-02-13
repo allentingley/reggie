@@ -97,8 +97,9 @@ module.exports = (robot) ->
   robot.respond /schedule (?:del|delete|remove|cancel) (\d+)/i, (msg) ->
     cancelSchedule robot, msg, msg.match[1]
 
-  robot.respond /debug.time/i, (msg) ->
-    return msg.send Date.now()
+  robot.respond /debugtime/i, (msg) ->
+    duh = Date.now()
+    return msg.send duh 
 
 schedule = (robot, msg, room, pattern, message) ->
   if JOB_MAX_COUNT <= Object.keys(JOBS).length
