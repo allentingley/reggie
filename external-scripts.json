@@ -10,6 +10,7 @@
   "hubot-darksky",
   "hubot-memes",
   "hubot-vsts-slack",
+  "hubot-cron",
   "hubot-better-help",
   "hubot-thank-you",
   "hubot-shipit"
