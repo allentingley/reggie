@@ -97,7 +97,6 @@ module.exports = (robot) ->
   robot.respond /schedule (?:del|delete|remove|cancel) (\d+)/i, (msg) ->
     cancelSchedule robot, msg, msg.match[1]
 
-###DEBUG###
   robot.respond /debug.time/i, (msg) ->
     return msg.send Date.now()
 
