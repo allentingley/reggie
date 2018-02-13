@@ -124,7 +124,7 @@ createSchedule = (robot, id, pattern, user, room, message) ->
   if isCronPattern(pattern)
     return createCronSchedule robot, id, pattern, user, room, message
 
-  date = Date.parse(pattern)
+  date = Date.parse(pattern) + 18000000
   if !isNaN(date)
     if date < Date.now()
       throw new Error "\"#{pattern}\" has already passed, date.now: " + Date.now() + ", parsed date: " + date
