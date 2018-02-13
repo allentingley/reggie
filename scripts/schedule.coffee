@@ -98,7 +98,7 @@ module.exports = (robot) ->
     cancelSchedule robot, msg, msg.match[1]
 
   robot.respond /debugtime/i, (msg) ->
-    duh = Date.now()
+    duh = Date()
     msg.send duh 
 
 schedule = (robot, msg, room, pattern, message) ->
@@ -127,7 +127,7 @@ createSchedule = (robot, id, pattern, user, room, message) ->
   date = Date.parse(pattern)
   if !isNaN(date)
     if date < Date.now()
-      throw new Error "\"#{pattern}\" has already passed, date.now: " + Date.now() * ", parsed date: " + date
+      throw new Error "\"#{pattern}\" has already passed, date.now: " + Date.now() + ", parsed date: " + date
     return createDatetimeSchedule robot, id, pattern, user, room, message
 
 
