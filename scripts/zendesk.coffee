@@ -386,13 +386,13 @@ module.exports = (robot) ->
           message += "\n#{zdicon}Ticket #{result.id} #{result.subject} (#{result.status.toUpperCase()})[#{result.priority}]: #{tickets_url}/#{result.id}"
         msg.send message
     else if /all/i.test(query) is true
-      zendesk_request msg, unsolved_query + "+group:#{group}", (results) ->
+      zendesk_request msg, all_query + "+group:#{group}", (results) ->
         message = "#{zdicon}There are currently #{results.count} unsolved tickets in #{group}:"
         for result in results.results
           message += "\n#{zdicon}Ticket #{result.id} #{result.subject} (#{result.status.toUpperCase()})[#{result.priority}]: #{tickets_url}/#{result.id}"
         msg.send message
     else
-      zendesk_request msg, unsolved_query + "+tags:#{query}" + "+group:#{group}", (results) ->
+      zendesk_request msg, all_query + "+tags:#{query}" + "+group:#{group}", (results) ->
         message = "#{zdicon}There are currently #{results.count} unsolved #{query} tagged tickets in #{group}:"
         for result in results.results
           message += "\n#{zdicon}Ticket #{result.id} #{result.subject} (#{result.status.toUpperCase()})[#{result.priority}]: #{tickets_url}/#{result.id}"
