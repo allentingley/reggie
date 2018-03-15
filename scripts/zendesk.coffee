@@ -29,7 +29,8 @@
 #   hubot zendesk <all|status|tag> tickets - returns a count of tickets with the status (all=unsolved), or tag (unsolved).
 #   hubot zendesk <all|status|tag> tickets <group> - returns a count of tickets assigned to provided group.
 #   hubot zendesk list <all|status|tag> tickets - returns a list of tickets with the status (all=unsolved), or tag (unsolved).
-#   hubot zendesk list <all|status|tag> tickets <group> - returns list of tickets assigned to provided group.
+#   hubot zendesk list <all|status|tag> tickets <group> - returns list of unsolved tickets assigned to provided group.
+#   hubot zendesk list-all <all|status|tag> tickets <group> - returns list of tickets assigned to provided group.
 #   hubot zendesk ticket <ID> - Returns information about the specified ticket. 
 #   hubot zendesk update <ID> <status|priority|type> - Updates ticket with a private comment on who did it.
 #   hubot zendesk update <ID> tags <tag tag_1> - Replaces tags with the ones specified. 
